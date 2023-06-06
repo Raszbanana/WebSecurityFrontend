@@ -1,7 +1,9 @@
 <script>
   import { getContext } from 'svelte';
-  import { getAccessToken } from '../stores/store.js';
   import { get } from "svelte/store";
+  
+  import { getAccessToken } from '../stores/store.js';
+  import { serverUrl } from "../stores/store";
 
   const { close } = getContext('simple-modal');
 
