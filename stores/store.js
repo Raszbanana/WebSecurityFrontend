@@ -1,6 +1,8 @@
 import { writable } from "svelte/store";
 
-export const serverUrl = writable("http://localhost:3000");
+export const serverUrl = writable(
+  "https://cocktails-securit.azurewebsites.net"
+);
 
 // accessToken
 export const accessToken = writable(
