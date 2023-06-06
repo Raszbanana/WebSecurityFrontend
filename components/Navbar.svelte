@@ -19,6 +19,7 @@ import { getPhoto } from '../service/ProfileService';
     removeUserId,
     getUser,
   } from '../stores/store';
+  import { get } from 'svelte/store';
 
   $: isAuthorized = false;
 

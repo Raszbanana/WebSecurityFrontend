@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 
 export const serverUrl = writable(
   "https://cocktails-securit.azurewebsites.net"

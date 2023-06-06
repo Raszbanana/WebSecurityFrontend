@@ -1,10 +1,11 @@
-import { get } from 'svelte/store';
-import { serverUrl } from '../stores/store';
+import { get } from "svelte/store";
+import { serverUrl } from "../stores/store";
+
 export async function sendEmail(email) {
   const res = await fetch(`${get(serverUrl)}/sendEmail/${email}`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'content-type': 'application/json',
+      "content-type": "application/json",
     },
   });
 
@@ -15,12 +16,15 @@ export async function sendEmail(email) {
 }
 
 export async function sendBeerEmail(email) {
-  const res = await fetch(`${get(serverUrl)}/sendEmail/incrementBeer/${email}`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
+  const res = await fetch(
+    `${get(serverUrl)}/sendEmail/incrementBeer/${email}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    }
+  );
 
   if (res.ok) {
     const json = await res.json();
