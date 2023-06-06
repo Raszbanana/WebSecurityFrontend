@@ -82,7 +82,7 @@ export const getUser = async () => {
   const token = getAccessToken();
 
   if (id) {
-    const response = await fetch(`http://localhost:3000/users/name`, {
+    const response = await fetch(`${get(serverUrl)}/users/name`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export const updateUser = async (userFirstName, userLastName) => {
     lastName: userLastName,
   };
 
-  const response = await fetch(`http://localhost:3000/users/name`, {
+  const response = await fetch(`${get(serverUrl)}/users/name`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -132,7 +132,7 @@ export const updateUser = async (userFirstName, userLastName) => {
 export const getCocktails = async () => {
   const token = getAccessToken();
 
-  const response = await fetch(`http://localhost:3000/cocktails`, {
+  const response = await fetch(`${get(serverUrl)}/cocktails`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -160,7 +160,7 @@ export const saveBeerValue = async (value) => {
     value: value,
   };
 
-  const response = await fetch("http://localhost:3000/theBeer", {
+  const response = await fetch(`${get(serverUrl)}/theBeer`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -177,7 +177,7 @@ export const saveBeerValue = async (value) => {
 export const getBeerValue = async () => {
   const token = getAccessToken();
 
-  const response = await fetch(`http://localhost:3000/theBeer/`, {
+  const response = await fetch(`${get(serverUrl)}/theBeer`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export const userHasClicked = async (hasClicked) => {
   const user = await getUser();
   user.hasClicked = hasClicked;
   const token = getAccessToken();
-  const response = await fetch(`http://localhost:3000/users/name`, {
+  const response = await fetch(`${get(serverUrl)}/users/name`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

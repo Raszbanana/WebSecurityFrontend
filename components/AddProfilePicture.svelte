@@ -1,6 +1,7 @@
 <script>
   import { getContext } from 'svelte';
   import { getAccessToken } from '../stores/store.js';
+  import { get } from "svelte/store";
 
   const { close } = getContext('simple-modal');
 
@@ -15,8 +16,9 @@
     const imageToUpload = new FormData();
     imageToUpload.append('profilePicture', image);
 
+    
     const token = getAccessToken();
-    const response = await fetch('http://localhost:3000/users/upload-pb', {
+    const response = await fetch(`${get(serverUrl)}/users/upload-pb`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
